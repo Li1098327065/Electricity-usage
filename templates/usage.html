@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Electricity Usage Data</title>
+</head>
+<body>
+    <h2>Usage Data for Meter ID: {{ meter_id }}</h2>
+    <table border="1">
+        <tr>
+            <th>Timestamp</th>
+            <th>Reading (kWh)</th>
+        </tr>
+        {% for entry in usage %}
+        <tr>
+            <td>{{ entry.timestamp }}</td>
+            <td>{{ entry.reading }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="/">Go Back</a>
+</body>
+</html>

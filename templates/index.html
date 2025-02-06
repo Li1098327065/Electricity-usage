@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Electricity Usage Query</title>
+    <script>
+        function fetchUsage() {
+            let meterId = document.getElementById("meter_id").value;
+            let period = document.getElementById("period").value;
+            if (!meterId) {
+                alert("Please enter a meter ID.");
+                return;
+            }
+            window.location.href = `/user/usage?meter_id=${meterId}&period=${period}`;
+        }
+    </script>
+</head>
+<body>
+    <h2>Electricity Usage Query</h2>
+    <label for="meter_id">Meter ID:</label>
+    <input type="text" id="meter_id" placeholder="Enter Meter ID">
+    <br><br>
+    <label for="period">Select Time Period:</label>
+    <select id="period">
+        <option value="30m">Last 30 Minutes</option>
+        <option value="1d">Last 1 Day</option>
+        <option value="1w">Last 1 Week</option>
+        <option value="1m">Last 1 Month</option>
+    </select>
+    <br><br>
+    <button onclick="fetchUsage()">Get Usage</button>
+</body>
+</html>
